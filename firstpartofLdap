@@ -20,7 +20,7 @@ chown ldap. /var/lib/ldap/DB_CONFIG
 #enable and slapd daemon
 systemctl enable slapd
 systemctl start slapd
-  #check status if desired:
+#check status if desired:
 systemctl status slapd
 
 #install apache server: httpd (http daemon)
@@ -73,7 +73,7 @@ echo -n "$newsecret" > /root/ldap_admin_pass
 chmod 600 /root/ldap_admin_pass
 
 #ldiff file, configures root domain name 
-echo -e "dn: olcDatabase = {2}hdb,cn=config
+echo -e "dn: olcDatabase ={2}hdb,cn=config
 changetype: modify
 replace: olcSuffix
 olcSuffix: dc=nti310,dc=local
