@@ -13,10 +13,14 @@ mkdir /var/nfsshare/homedirs
 chmod -R 777 /var/nfsshare/ #after troubleshooting will lock down
 
 #enable nfs services
-systemctl enable rpcbind #rpc numbers to universal addresses
-systemctl enable nfs-server #nfs server
-systemctl enable nfs-lock #nfs lock
-systemctl enable nfs-idmap #nfs idmap
+#rpc numbers to universal addresses
+systemctl enable rpcbind
+#nfs server
+systemctl enable nfs-server 
+#nfs lock
+systemctl enable nfs-lock 
+#nfs idmap
+systemctl enable nfs-idmap 
 
 #start enabled services
 systemctl start rpcbind
@@ -25,7 +29,7 @@ systemctl start nfs-lock
 systemctl start nfs-idmap
 
 cd /var/nfsshare/
-d
+
 #shares directory with rest of network as a file system
 echo "/var/nfsshare/home_dirs *(rw,sync,no_all_squash)
 /var/nfsshare/devstuff *(rw,sync,no_all_squash)
