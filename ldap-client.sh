@@ -3,6 +3,7 @@ apt-get update
 apt-get update install libnss-ldap libpam-ldap ldap-utils nslcd debconf-utils
 vim /etc/nsswitch.conf
 vim /etc/ldap/ldap.conf 
+#restart nslcd 
 /etc/init.d/nslcd restart
 #list all users
 getent passwd
