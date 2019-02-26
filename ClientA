@@ -11,7 +11,7 @@ export DEBIAN_FRONTEND=noninteractive
 #install ldap packages
 apt-get --yes install libnss-ldap libpam-ldap ldap-utils nscd
 
-//reset prompting
+#reset prompting
 unset DEBIAN_FRONTEND
 
 #installing ldap packages needed
