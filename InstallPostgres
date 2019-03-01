@@ -2,10 +2,11 @@
 #https://www.digitalocean.com/community/tutorials/how-to-use-postgresql-with-your-django-application-on-centos-7
 #sudo yum install pel-release
 
+#install necessary components
 yum install -y python-pip python-devel gcc postgresql-server postgresql-devel postgresql-contrib
 
 #install postgres
-sudo postgresql-setup initdb
+postgresql-setup initdb
 
 #start postgres
 systemctl start postgresql
