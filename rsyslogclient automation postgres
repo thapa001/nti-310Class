@@ -15,4 +15,5 @@ systemctl restart rsyslog
 
 tail -F /var/log/messages
 
+#message on client postgres: ***
 #echo "test statement" | logger
