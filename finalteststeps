@@ -7,3 +7,4 @@ st1-b --tags "http-server","https-server" --machine-type f1-micro --scopes cloud
 cript=nti-310Class/postgres_phpadmin.sh
 
 
+#client, nfs and rsyslog server does not needed http server 
