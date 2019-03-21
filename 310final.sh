@@ -3,36 +3,36 @@
 https://github.com/thapa001/nti-310Class.git
 #1. rsyslog
 #installing gcloud compute command
-gcloud compute instances create rsyslog-server-a \
+gcloud compute instances create rsyslogserver1 \
 --image-family centos-7 \
 --image-project centos-cloud \
 --zone us-east1-b \
 #--tags "http-server","https-server" \
 --machine-type f1-micro \
 --scopes cloud-platform \
---metadata-from-file startup-script=nti-310Class/rsyslog_install_Mar07.sh
+--metadata-from-file startup-script=nti-310Class/rsyslog_server.sh
 
 
 #2. postgres and phpPGadmin
 #installing gcloud compute command
-gcloud compute instances create postgres-server-a \
+gcloud compute instances create postgresphpadminserver1 \
 --image-family centos-7 \
 --image-project centos-cloud \
 --zone us-east1-b \
 --tags "http-server","https-server" \
 --machine-type f1-micro \
 --scopes cloud-platform \
---metadata-from-file startup-script=nti-310Class/Install_postgress_phpPgAdmin_Mar14.sh
+--metadata-from-file startup-script=nti-310Class/postgres_phpadmin.sh
 
 #3 ldap
-gcloud compute instances create ldap-server-a \
+gcloud compute instances create ldapautouser1 \
 --image-family centos-7 \
 --image-project centos-cloud \
 --zone us-east1-b \
 --tags "http-server","https-server" \
 --machine-type f1-micro \
 --scopes cloud-platform \
---metadata-from-file startup-script=nti-310Class/ldap-auto-users_14Mar.sh
+--metadata-from-file startup-script=nti-310Class/ldap.sh
       
 
 #4 #nfs
