@@ -1,6 +1,6 @@
 #!/bin/bash
 #install git
-git clone https://github.com/thapa001/nti-310Class.git
+https://github.com/thapa001/nti-310Class.git
 #1. rsyslog
 #installing gcloud compute command
 gcloud compute instances create rsyslog-server-a \
