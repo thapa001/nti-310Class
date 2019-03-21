@@ -21,6 +21,7 @@ sed -i 's/#$InputTCPServerRun 514/$InputTCPServerRun 514/g' /etc/rsyslog.conf
 #restart system and check status
 
 systemctl restart rsyslog
+systemctl status rsyslog
 
 
 #add on this on ryslog.conf
