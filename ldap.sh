@@ -93,10 +93,10 @@ olcRootPW: $newhash" > db.ldif
 ldapmodify -Y EXTERNAL -H ldapi:/// -f db.ldif
 
 #Auth restriction
-echo "dn: olcDatabase ={1}monitor,cn=config
+echo 'dn: olcDatabase ={1}monitor,cn=config
 changetype: modify
 replace: olcAccess
-olcAccess: {0}to * by dn.base="gidNumber=0+uidNumber=0,cn=peercred,cn=external, cn=auth" read by dn.base="cn=ldapadm,dc=nti310,dc=local" read by * none' > monitor.ldif
+olcAccess: {0}to * by dn.base="gidNumber=0+uidNumber=0, cn=peercred, cn=external, cn=auth" read by dn.base="cn=ldapadm,dc=nti310,dc=local" read by * none' > monitor.ldif
 
 ldapmodify -Y EXTERNAL  -H ldapi:/// -f monitor.ldif
 
@@ -163,8 +163,8 @@ systemctl restart httpd
 
 #add user Accounts Data
 
-# Entry 1: cn=alison becker,ou=People,dc=nti310,dc=local
-echo -e "dn: cn=alison becker,ou=People,dc=nti310,dc=local
+echo -e "# Entry 1: cn=alison becker,ou=People,dc=nti310,dc=local
+dn: cn=alison becker,ou=People,dc=nti310,dc=local
 cn: alison becker
 gidnumber: 500
 givenname: alison
@@ -257,8 +257,8 @@ userpassword: {SHA}ufCIMwLTxU9IWN9eCXG2+GYYwmw=" > user2.ldif
 ldapadd -x -W -D "cn=ldapadm,dc=nti310,dc=local" -f user2.ldif -y /root/ldap_admin_pass
 
 # add user groups
-# Entry 1: cn=users,ou=Group,dc=nti310,dc=local
-echo -e "dn: cn=users,ou=Group,dc=nti310,dc=local
+echo -e "# Entry 1: cn=users,ou=Group,dc=nti310,dc=local
+dn: cn=users,ou=Group,dc=nti310,dc=local
 cn: users
 gidnumber: 500
 objectclass: posixGroup
@@ -282,7 +282,7 @@ objectclass: top" > groups.ldif
 ldapadd -x -W -D "cn=ldapadm,dc=nti310,dc=local" -f groups.ldif -y /root/ldap_admin_pass
 
 #Execute user account creation
-ldapadd -x -W -D "cn=ldapadm,dc=nti310,dc=local" -f userAccount.ldif -y /root/ldap_admin_pass
+#ldapadd -x -W -D "cn=ldapadm,dc=nti310,dc=local" -f userAccount.ldif -y /root/ldap_admin_pass
 
 #ryslog client automation (install in client server instances):
 yum update -y  && yum install -y rsyslog
