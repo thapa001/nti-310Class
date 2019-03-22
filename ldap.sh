@@ -109,7 +109,7 @@ chown -R ldap. /etc/openldap/certs/nti*.pem
 
 # Use Certs in LDAP. Run ldapkey part first and then ldapcert part second
 
-echo "dn: cn=config
+echo -e "dn: cn=config
 changetype: modify
 replace: olcTLSCertificateFile
 olcTLSCertificateFile: /etc/openldap/certs/nti310ldapcert.pem
@@ -135,7 +135,7 @@ ldapadd -Y EXTERNAL -H ldapi:/// -f /etc/openldap/schema/inetorgperson.ldif
 
 # Create base group and people structure
 
-echo "dn: dc=nti310,dc=local
+echo -e "dn: dc=nti310,dc=local
 dc: nti310
 objectClass: top
 objectClass: domain
@@ -162,7 +162,7 @@ systemctl restart httpd
 #add user Accounts Data
 
 # Entry 1: cn=alison becker,ou=People,dc=nti310,dc=local
-dn: cn=alison becker,ou=People,dc=nti310,dc=local
+echo -e "dn: cn=alison becker,ou=People,dc=nti310,dc=local
 cn: alison becker
 gidnumber: 500
 givenname: alison
@@ -249,14 +249,14 @@ objectclass: top
 sn: van
 uid: vburger
 uidnumber: 1006
-userpassword: {SHA}ufCIMwLTxU9IWN9eCXG2+GYYwmw=
+userpassword: {SHA}ufCIMwLTxU9IWN9eCXG2+GYYwmw=" > user2.ldif
 
 #Execute user account creation
 ldapadd -x -W -D "cn=ldapadm,dc=nti310,dc=local" -f user2.ldif -y /root/ldap_admin_pass
 
 # add user groups
 # Entry 1: cn=users,ou=Group,dc=nti310,dc=local
-dn: cn=users,ou=Group,dc=nti310,dc=local
+echo -e "dn: cn=users,ou=Group,dc=nti310,dc=local
 cn: users
 gidnumber: 500
 objectclass: posixGroup
@@ -275,7 +275,7 @@ cn: users
 cn: woman
 gidnumber: 503
 objectclass: posixGroup
-objectclass: top
+objectclass: top" > groups.ldif
 #adding in userGroup.ldif
 ldapadd -x -W -D "cn=ldapadm,dc=nti310,dc=local" -f groups.ldif -y /root/ldap_admin_pass
 
