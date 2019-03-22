@@ -74,10 +74,9 @@ sed -i 's/rootbinddn cn=manager,dc=example,dc=net/rootbinddn cn=ldapadm,dc=nti31
 systemctl restart nscd
 systemctl enable nscd
 
-#install nfs files
-yum install -y nfs-utils
+#install nfs client
+apt-get install -y nfs-client:
 
-#on client server:
 #make test directory
 mkdir /mnt/test
 
@@ -88,7 +87,7 @@ echo "nfs-a:/var/nfsshare/testing  /mnt/test nfs defaults 0 0" >> /etc/fstab
 mount -a
 
 #enter test directory
-#cd /mnt/test
+cd /mnt/test
 
 #create new file to be shown on host server
-#touch mynewfile
+touch mynewfile
