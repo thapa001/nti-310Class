@@ -74,7 +74,7 @@ sed -i 's/rootbinddn cn=manager,dc=example,dc=net/rootbinddn cn=ldapadm,dc=nti31
 systemctl restart nscd
 systemctl enable nscd
 
-
+####get nfs client
 #install nfs client
 apt-get install -y nfs-client:
 
