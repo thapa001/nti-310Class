@@ -4,7 +4,7 @@
 
 yum install -y git
 cd /tmp
-git clone https://github.com/thapa001/nti-310Class.git
+git clone https://github.com/nic-instruction/hello-nti-310.git
 
 #install ldap server material
 yum install -y openldap-servers openldap-clients
