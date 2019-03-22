@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #install nfs client
-apt-get install -y nfs-client
+apt-get install -y nfs-client:
 
 #make test directory
 mkdir /mnt/test
