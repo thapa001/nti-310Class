@@ -74,59 +74,21 @@ sed -i 's/rootbinddn cn=manager,dc=example,dc=net/rootbinddn cn=ldapadm,dc=nti31
 systemctl restart nscd
 systemctl enable nscd
 
-######################  #get nsf client
 
-#install nfs files
-yum install -y nfs-utils
+#install nfs client
+apt-get install -y nfs-client:
 
-#create directories for mount points of data
-mkdir /var/nfsshare
-mkdir /var/nfsshare/devstuf
-mkdir /var/nfsshare/testing
-mkdir /var/nfsshare/homedirs
+#make test directory
+mkdir /mnt/test
 
-#change permission to read/write/execute of /var/nfsshare file to whole world for troubleshooting
-chmod -R 777 /var/nfsshare/ #after troubleshooting will lock down
+#save server name and data into fstab in /etc
+echo "nfs-a:/var/nfsshare/testing  /mnt/test nfs defaults 0 0" >> /etc/fstab
 
-#enable nfs services
-systemctl enable rpcbind #rpc numbers to universal addresses
-systemctl enable nfs-server #nfs server
-systemctl enable nfs-lock #nfs lock
-systemctl enable nfs-idmap #nfs idmap
+#mount file onto client
+mount -a
 
-#start enabled services
-systemctl start rpcbind
-systemctl start nfs-server
-systemctl start nfs-lock
-systemctl start nfs-idmap
+#enter test directory
+cd /mnt/test
 
-cd /var/nfsshare/
-d
-#shares directory with rest of network as a file system
-echo "/var/nfsshare/home_dirs *(rw,sync,no_all_squash)
-/var/nfsshare/devstuff *(rw,sync,no_all_squash)
-/var/nfsshare/testing *(rw,sync,no_all_squash)" >> /etc/exports
-
-#system restart
-systemctl restart nfs-server
-
-#install net tools to get ifconfig
-yum -y install net-tools
-
-#using ifconfig to find your IP address, you will use this for the client.
-ipaddress=ifconfig | grep broadcast | awk '{print $2}' #save ip address, 2nd field in ifconfig
-
-showmount -e $ipaddress # whre $ipaddress is the ip of your nfs server
-
-
-##on client server:
-
-##make test directory
-#mkdir /mnt/test
-
-##save ipaddress and data into fstab in /etc
-#echo "10.142.0.22:/var/nfsshare/testing  /mnt/test nfs defaults 0 0" >> /etc/fstab
-
-##mount file
-#mount -a
-##*profit*
+#create new file to be shown on host server
+touch mynewfile
