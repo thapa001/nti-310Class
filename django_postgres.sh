@@ -41,7 +41,7 @@ django-admin.py startproject myproject .
 #} #~/myproject/myproject/settings.py
 
 #download file settings.py file directly from git
-wget -O ~/myproject/myproject/settings.py https://raw.githubusercontent.com/thapa001/nti-310Class/master/settings.py
+wget -O ~/myproject/myproject/settings.py https://github.com/thapa001/nti-310Class/blob/master/settings.py
 
 #migrate python files
 python manage.py makemigrations
