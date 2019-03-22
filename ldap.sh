@@ -279,4 +279,15 @@ objectclass: top
 #adding in userGroup.ldif
 ldapadd -x -W -D "cn=ldapadm,dc=nti310,dc=local" -f groups.ldif -y /root/ldap_admin_pass
 
+#Execute user account creation
+ldapadd -x -W -D "cn=ldapadm,dc=nti310,dc=local" -f userAccount.ldif -y /root/ldap_admin_pass
+
+#ryslog client automation (install in client server instances):
+yum update -y  && yum install -y rsyslog
+systemctl start rsyslog
+systemctl enable rsyslog
+cp /etc/rsyslog.conf /etc/rsyslog.conf.bak
+
+echo "*.*  @@:514" >> /etc/rsyslog.conf
+
 
