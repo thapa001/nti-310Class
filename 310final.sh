@@ -57,7 +57,7 @@ gcloud compute instances create djangopostgresfinal2 \
       
 
 #6 ubuntu client - 1 
-gcloud compute instances create nsfandubuntufinal1 \
+gcloud compute instances create nfsandubuntufinal1 \
 --image-family ubuntu-1804-lts \
 --image-project ubuntu-os-cloud \
 --zone us-east1-b \
