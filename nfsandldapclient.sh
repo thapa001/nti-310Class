@@ -81,7 +81,7 @@ apt-get install -y nfs-client:
 mkdir /mnt/test
 
 #save server name and data into fstab in /etc
-echo "nfs-a:/var/nfsshare/testing  /mnt/test nfs defaults 0 0" >> /etc/fstab
+echo "nfs2:/var/nfsshare/testing  /mnt/test nfs defaults 0 0" >> /etc/fstab
 
 #mount file onto client
 mount -a
