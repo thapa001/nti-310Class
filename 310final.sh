@@ -36,7 +36,7 @@ gcloud compute instances create ldapautouser2 \
       
 
 #4 #nfs
-gcloud compute instances create nfs-a \
+gcloud compute instances create nfs2 \
 --image-family centos-7 \
 --image-project centos-cloud \
 --zone us-east1-b \
