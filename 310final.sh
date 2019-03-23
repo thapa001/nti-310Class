@@ -56,7 +56,7 @@ gcloud compute instances create djangopostgresfinal2 \
 --metadata-from-file startup-script=nti-310Class/django_postgres.sh
       
 
-#6 ubuntu client - 1 
+#6 nfs and ldap client - 1 
 gcloud compute instances create nfsfinal1 \
 --image-family ubuntu-1804-lts \
 --image-project ubuntu-os-cloud \
@@ -67,7 +67,7 @@ gcloud compute instances create nfsfinal1 \
 --metadata-from-file startup-script=nti-310Class/nfsandldaplient.sh
       
 
-#7 ubuntu client- 2
+#7 nfs and ldap client- 2
 gcloud compute instances create nfsfinalpart2 \
 --image-family ubuntu-1804-lts \
 --image-project ubuntu-os-cloud \
