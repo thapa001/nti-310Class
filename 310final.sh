@@ -64,7 +64,7 @@ gcloud compute instances create nfsfinal1 \
 #--tags "http-server","https-server" \
 --machine-type f1-micro \
 --scopes cloud-platform \
---metadata-from-file startup-script=nti-310Class/nfsandldaplient.sh
+--metadata-from-file startup-script=nti-310Class/nfs_and_ldap_client.sh
       
 
 #7 nfs and ldap client- 2
@@ -75,4 +75,4 @@ gcloud compute instances create nfsfinalpart2 \
 #--tags "http-server","https-server" \
 --machine-type f1-micro \
 --scopes cloud-platform \
---metadata-from-file startup-script=nti-310Class/nfsandldaplient.sh
+--metadata-from-file startup-script=nti-310Class/nfs_and_ldap_client.sh
