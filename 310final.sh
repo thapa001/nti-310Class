@@ -36,7 +36,7 @@ gcloud compute instances create ldapautouser2 \
       
 
 #4 #nfs
-gcloud compute instances create nfsfinal1 \
+gcloud compute instances create nfs-a \
 --image-family centos-7 \
 --image-project centos-cloud \
 --zone us-east1-b \
@@ -57,7 +57,7 @@ gcloud compute instances create djangopostgresfinal2 \
       
 
 #6 ubuntu client - 1 
-gcloud compute instances create networkfilesystem \
+gcloud compute instances create nfsfinal1 \
 --image-family ubuntu-1804-lts \
 --image-project ubuntu-os-cloud \
 --zone us-east1-b \
@@ -68,7 +68,7 @@ gcloud compute instances create networkfilesystem \
       
 
 #7 ubuntu client- 2
-gcloud compute instances create nfspart2 \
+gcloud compute instances create nfsfinalpart2 \
 --image-family ubuntu-1804-lts \
 --image-project ubuntu-os-cloud \
 --zone us-east1-b \
