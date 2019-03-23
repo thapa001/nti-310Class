@@ -57,22 +57,22 @@ gcloud compute instances create djangopostgresfinal2 \
       
 
 #6 ubuntu client - 1 
-gcloud compute instances create nfsandubuntufinal1 \
+gcloud compute instances create networkfilesystem \
 --image-family ubuntu-1804-lts \
 --image-project ubuntu-os-cloud \
 --zone us-east1-b \
 #--tags "http-server","https-server" \
 --machine-type f1-micro \
 --scopes cloud-platform \
---metadata-from-file startup-script=nti-310Class/nfsandubuntu.sh
+--metadata-from-file startup-script=nti-310Class/nfsandubuntuclient.sh
       
 
 #7 ubuntu client- 2
-gcloud compute instances create nfsandubuntufinalpart2 \
+gcloud compute instances create nfspart2 \
 --image-family ubuntu-1804-lts \
 --image-project ubuntu-os-cloud \
 --zone us-east1-b \
 #--tags "http-server","https-server" \
 --machine-type f1-micro \
 --scopes cloud-platform \
---metadata-from-file startup-script=nti-310Class/nfsandubuntu.sh
+--metadata-from-file startup-script=nti-310Class/nfsandubuntuclient.sh
