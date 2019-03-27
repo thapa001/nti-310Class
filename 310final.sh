@@ -7,7 +7,6 @@ gcloud compute instances create rsyslogserver2 \
 --image-family centos-7 \
 --image-project centos-cloud \
 --zone us-east1-b \
-#--tags "http-server","https-server" \
 --machine-type f1-micro \
 --scopes cloud-platform \
 --metadata-from-file startup-script=nti-310Class/rsyslog_server.sh
@@ -40,7 +39,6 @@ gcloud compute instances create nfs2 \
 --image-family centos-7 \
 --image-project centos-cloud \
 --zone us-east1-b \
-#--tags "http-server","https-server" \
 --machine-type f1-micro \
 --scopes cloud-platform \
 --metadata-from-file startup-script=nti-310Class/nfs-a.sh
@@ -61,7 +59,6 @@ gcloud compute instances create nfsfinal1 \
 --image-family ubuntu-1804-lts \
 --image-project ubuntu-os-cloud \
 --zone us-east1-b \
-#--tags "http-server","https-server" \
 --machine-type f1-micro \
 --scopes cloud-platform \
 --metadata-from-file startup-script=nti-310Class/nfs_and_ldap_client.sh
@@ -72,7 +69,6 @@ gcloud compute instances create nfsfinalpart2 \
 --image-family ubuntu-1804-lts \
 --image-project ubuntu-os-cloud \
 --zone us-east1-b \
-#--tags "http-server","https-server" \
 --machine-type f1-micro \
 --scopes cloud-platform \
 --metadata-from-file startup-script=nti-310Class/nfs_and_ldap_client.sh
