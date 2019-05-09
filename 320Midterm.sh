@@ -1,7 +1,28 @@
 #!/bin/bash
 #install git
 https://github.com/thapa001/nti-310Class.git
-#Rsyslog Server
+
+#1 create nagios server
+gcloud compute instances create nagiosinstall \
+--image-family centos-7 \
+--image-project centos-cloud \
+--zone us-east1-b \
+--machine-type f1-micro \
+--scopes cloud-platform \
+--metadata-from-file startup-script=nti-310Class/nagios_install.sh
+
+#2 create cacti server
+gcloud compute instances create cactiinstall \
+--image-family centos-7 \
+--image-project centos-cloud \
+--zone us-east1-b \
+--machine-type f1-micro \
+--scopes cloud-platform \
+--metadata-from-file startup-script=nti-310Class/cacti_install.sh
+
+
+
+#3 Rsyslog Server
 gcloud compute instances create rsyslogserver \
 --image-family centos-7 \
 --image-project centos-cloud \
@@ -11,7 +32,7 @@ gcloud compute instances create rsyslogserver \
 --metadata-from-file startup-script=nti-310Class/rsyslog_server.sh
 
 
-#2. postgres and phpPGadmin
+#4 postgres and phpPGadmin
 gcloud compute instances create postgresphpadminserver \
 --image-family centos-7 \
 --image-project centos-cloud \
@@ -21,7 +42,7 @@ gcloud compute instances create postgresphpadminserver \
 --scopes cloud-platform \
 --metadata-from-file startup-script=nti-310Class/postgres_phpadmin.sh
 
-#3 ldap
+#5 ldap
 gcloud compute instances create ldapserver \
 --image-family centos-7 \
 --image-project centos-cloud \
@@ -32,7 +53,7 @@ gcloud compute instances create ldapserver \
 --metadata-from-file startup-script=nti-310Class/ldap.sh
       
 
-#4 #nfs
+#6 nfs
 gcloud compute instances create nfs \
 --image-family centos-7 \
 --image-project centos-cloud \
@@ -41,7 +62,7 @@ gcloud compute instances create nfs \
 --scopes cloud-platform \
 --metadata-from-file startup-script=nti-310Class/nfs-a.sh
       
-#5 django
+#7 django
 gcloud compute instances create djangopostgresfinal \
 --image-family centos-7 \
 --image-project centos-cloud \
@@ -52,7 +73,7 @@ gcloud compute instances create djangopostgresfinal \
 --metadata-from-file startup-script=nti-310Class/django_postgres.sh
       
 
-#6 nfs and ldap client - 1 
+#8 nfs and ldap client - 1 
 gcloud compute instances create nfspart1 \
 --image-family ubuntu-1804-lts \
 --image-project ubuntu-os-cloud \
@@ -62,7 +83,7 @@ gcloud compute instances create nfspart1 \
 --metadata-from-file startup-script=nti-310Class/nfs_and_ldap_client.sh
       
 
-#7 nfs and ldap client- 2
+#9 nfs and ldap client- 2
 gcloud compute instances create nfspart2 \
 --image-family ubuntu-1804-lts \
 --image-project ubuntu-os-cloud \
@@ -71,23 +92,6 @@ gcloud compute instances create nfspart2 \
 --scopes cloud-platform \
 --metadata-from-file startup-script=nti-310Class/nfs_and_ldap_client.sh
 
-#8 create nagios server
-gcloud compute instances create nagiosinstall \
---image-family centos-7 \
---image-project centos-cloud \
---zone us-east1-b \
---machine-type f1-micro \
---scopes cloud-platform \
---metadata-from-file startup-script=nti-310Class/nagios_install.sh
-
-#9 create cacti server
-gcloud compute instances create cactiinstall \
---image-family centos-7 \
---image-project centos-cloud \
---zone us-east1-b \
---machine-type f1-micro \
---scopes cloud-platform \
---metadata-from-file startup-script=nti-310Class/cacti_install.sh
 
 
 
