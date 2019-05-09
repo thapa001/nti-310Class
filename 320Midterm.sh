@@ -17,8 +17,6 @@ gcloud compute instances create cactiinstall \
 --scopes cloud-platform \
 --metadata-from-file startup-script=nti-310Class/cacti_install.sh
 
-
-
 #3 Rsyslog Server
 gcloud compute instances create rsyslogserver \
 --image-family centos-7 \
@@ -27,7 +25,6 @@ gcloud compute instances create rsyslogserver \
 --machine-type f1-micro \
 --scopes cloud-platform \
 --metadata-from-file startup-script=nti-310Class/rsyslog_server.sh
-
 
 #4 postgres and phpPGadmin
 gcloud compute instances create postgresphpadminserver \
@@ -49,7 +46,6 @@ gcloud compute instances create ldapserver \
 --scopes cloud-platform \
 --metadata-from-file startup-script=nti-310Class/ldap.sh
       
-
 #6 nfs
 gcloud compute instances create nfs \
 --image-family centos-7 \
@@ -60,7 +56,7 @@ gcloud compute instances create nfs \
 --metadata-from-file startup-script=nti-310Class/nfs-a.sh
       
 #7 django
-gcloud compute instances create djangopostgresfinal \
+gcloud compute instances create django \
 --image-family centos-7 \
 --image-project centos-cloud \
 --zone us-east1-b \
