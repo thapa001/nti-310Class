@@ -1,6 +1,6 @@
 #!/bin/bash
 
-https://github.com/thapa001/nti-310Class.git
+#https://github.com/thapa001/nti-310Class.git
 
 #1 create nagios server
 gcloud compute instances create nagiosinstall \
