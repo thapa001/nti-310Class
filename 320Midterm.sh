@@ -70,3 +70,18 @@ gcloud compute instances create nfspart2 \
 --machine-type f1-micro \
 --scopes cloud-platform \
 --metadata-from-file startup-script=nti-310Class/nfs_and_ldap_client.sh
+
+# create nagios server
+gcloud compute instances create rsyslogserver \
+--image-family centos-7 \
+--image-project centos-cloud \
+--zone us-east1-b \
+--machine-type f1-micro \
+--scopes cloud-platform \
+--metadata-from-file startup-script=nti-310Class/nagios_install.sh
+
+
+
+
+
+
