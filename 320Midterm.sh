@@ -1,9 +1,8 @@
 #!/bin/bash
 #install git
 https://github.com/thapa001/nti-310Class.git
-#1. rsyslog
-#installing gcloud compute command
-gcloud compute instances create rsyslogserver2 \
+#Rsyslog Server
+gcloud compute instances create rsyslogserver \
 --image-family centos-7 \
 --image-project centos-cloud \
 --zone us-east1-b \
@@ -13,8 +12,7 @@ gcloud compute instances create rsyslogserver2 \
 
 
 #2. postgres and phpPGadmin
-#installing gcloud compute command
-gcloud compute instances create postgresphpadminserver2 \
+gcloud compute instances create postgresphpadminserver \
 --image-family centos-7 \
 --image-project centos-cloud \
 --zone us-east1-b \
@@ -24,7 +22,7 @@ gcloud compute instances create postgresphpadminserver2 \
 --metadata-from-file startup-script=nti-310Class/postgres_phpadmin.sh
 
 #3 ldap
-gcloud compute instances create ldapautouser2 \
+gcloud compute instances create ldapserver \
 --image-family centos-7 \
 --image-project centos-cloud \
 --zone us-east1-b \
@@ -35,7 +33,7 @@ gcloud compute instances create ldapautouser2 \
       
 
 #4 #nfs
-gcloud compute instances create nfs2 \
+gcloud compute instances create nfs \
 --image-family centos-7 \
 --image-project centos-cloud \
 --zone us-east1-b \
@@ -44,7 +42,7 @@ gcloud compute instances create nfs2 \
 --metadata-from-file startup-script=nti-310Class/nfs-a.sh
       
 #5 django
-gcloud compute instances create djangopostgresfinal2 \
+gcloud compute instances create djangopostgresfinal \
 --image-family centos-7 \
 --image-project centos-cloud \
 --zone us-east1-b \
@@ -55,7 +53,7 @@ gcloud compute instances create djangopostgresfinal2 \
       
 
 #6 nfs and ldap client - 1 
-gcloud compute instances create nfsfinal1 \
+gcloud compute instances create nfspart1 \
 --image-family ubuntu-1804-lts \
 --image-project ubuntu-os-cloud \
 --zone us-east1-b \
@@ -65,7 +63,7 @@ gcloud compute instances create nfsfinal1 \
       
 
 #7 nfs and ldap client- 2
-gcloud compute instances create nfsfinalpart2 \
+gcloud compute instances create nfspart2 \
 --image-family ubuntu-1804-lts \
 --image-project ubuntu-os-cloud \
 --zone us-east1-b \
