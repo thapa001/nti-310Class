@@ -72,22 +72,22 @@ gcloud compute instances create nfspart2 \
 --metadata-from-file startup-script=nti-310Class/nfs_and_ldap_client.sh
 
 #8 create nagios server
-gcloud compute instances create nagios-b \
+gcloud compute instances create nagios_install \
 --image-family centos-7 \
 --image-project centos-cloud \
 --zone us-east1-b \
 --machine-type f1-micro \
 --scopes cloud-platform \
---metadata-from-file startup-script=nti-310Class/nagios_install.sh
+--metadata-from-file startup-script=nti-310Class/NagiosInstall.sh
 
 #9 create cacti server
-gcloud compute instances create cacti-b \
+gcloud compute instances create cacti_install \
 --image-family centos-7 \
 --image-project centos-cloud \
 --zone us-east1-b \
 --machine-type f1-micro \
 --scopes cloud-platform \
---metadata-from-file startup-script=nti-310Class/cacti_install.sh
+--metadata-from-file startup-script=nti-310Class/CactiInstall.sh
 
 
 
