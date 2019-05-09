@@ -1,7 +1,4 @@
 #!/bin/bash
-#install git
-https://github.com/thapa001/nti-310Class.git
-
 #1 create nagios server
 gcloud compute instances create nagiosinstall \
 --image-family centos-7 \
