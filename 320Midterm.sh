@@ -23,13 +23,13 @@ gcloud compute instances create cactiinstall \
 --metadata-from-file startup-script=nti-310Class/cacti_install.sh
 
 #3 Rsyslog Server
-gcloud compute instances create rsyslogserver \
---image-family centos-7 \
---image-project centos-cloud \
---zone us-west1-b \
---machine-type f1-micro \
---scopes cloud-platform \
---metadata-from-file startup-script=nti-310Class/rsyslog_server.sh
+#gcloud compute instances create rsyslogserver \
+#--image-family centos-7 \
+#--image-project centos-cloud \
+#--zone us-west1-b \
+#--machine-type f1-micro \
+#--scopes cloud-platform \
+#--metadata-from-file startup-script=nti-310Class/rsyslog_server.sh
 
 #4 postgres and phpPGadmin
 gcloud compute instances create postgresphpadminserver \
