@@ -85,7 +85,7 @@ gcloud compute instances create nfspart1 \
 gcloud compute instances create nfspart2 \
 --image-family ubuntu-1804-lts \
 --image-project ubuntu-os-cloud \
---zone us-westt1-b \
+--zone us-west1-b \
 --machine-type f1-micro \
 --scopes cloud-platform \
 --metadata-from-file startup-script=nti-310Class/nfs_and_ldap_client.sh
