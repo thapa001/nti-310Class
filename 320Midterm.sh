@@ -6,7 +6,7 @@ https://github.com/thapa001/nti-310Class.git
 gcloud compute instances create nagiosinstall \
 --image-family centos-7 \
 --image-project centos-cloud \
---zone us-west1-b \
+--zone us-east4-c \
 --tags "http-server","https-server" \
 --machine-type f1-micro \
 --scopes cloud-platform \
@@ -16,7 +16,7 @@ gcloud compute instances create nagiosinstall \
 gcloud compute instances create cactiinstall \
 --image-family centos-7 \
 --image-project centos-cloud \
---zone us-west1-b \
+--zone us-east4-c \
 --tags "http-server","https-server" \
 --machine-type f1-micro \
 --scopes cloud-platform \
@@ -35,7 +35,7 @@ gcloud compute instances create cactiinstall \
 gcloud compute instances create postgresphpadminserver \
 --image-family centos-7 \
 --image-project centos-cloud \
---zone us-west1-b \
+--zone us-east4-c \
 --tags "http-server","https-server" \
 --machine-type f1-micro \
 --scopes cloud-platform \
@@ -45,7 +45,7 @@ gcloud compute instances create postgresphpadminserver \
 gcloud compute instances create ldapserver \
 --image-family centos-7 \
 --image-project centos-cloud \
---zone us-west1-b \
+--zone us-east4-c \
 --tags "http-server","https-server" \
 --machine-type f1-micro \
 --scopes cloud-platform \
@@ -55,7 +55,7 @@ gcloud compute instances create ldapserver \
 gcloud compute instances create nfs \
 --image-family centos-7 \
 --image-project centos-cloud \
---zone us-west1-b \
+--zone us-east4-c \
 --machine-type f1-micro \
 --scopes cloud-platform \
 --metadata-from-file startup-script=nti-310Class/nfs-a.sh
@@ -64,7 +64,7 @@ gcloud compute instances create nfs \
 gcloud compute instances create django \
 --image-family centos-7 \
 --image-project centos-cloud \
---zone us-west1-b \
+--zone us-east4-c \
 --tags "http-server","https-server" \
 --machine-type f1-micro \
 --scopes cloud-platform \
@@ -75,7 +75,7 @@ gcloud compute instances create django \
 gcloud compute instances create nfspart1 \
 --image-family ubuntu-1804-lts \
 --image-project ubuntu-os-cloud \
---zone us-west1-b \
+--zone us-east4-c \
 --machine-type f1-micro \
 --scopes cloud-platform \
 --metadata-from-file startup-script=nti-310Class/nfs_and_ldap_client.sh
@@ -85,7 +85,7 @@ gcloud compute instances create nfspart1 \
 gcloud compute instances create nfspart2 \
 --image-family ubuntu-1804-lts \
 --image-project ubuntu-os-cloud \
---zone us-west1-b \
+--zone us-east4-c \
 --machine-type f1-micro \
 --scopes cloud-platform \
 --metadata-from-file startup-script=nti-310Class/nfs_and_ldap_client.sh
