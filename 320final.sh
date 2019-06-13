@@ -18,7 +18,7 @@ gcloud compute instances create build-server \
 --tags "http-server","https-server" \
 --machine-type f1-micro \
 --scopes cloud-platform \
---metadata-from-file startup-script=NTI-320/rpmbuilderver.sh \
+--metadata-from-file startup-script=NTI-320/rpmbuildserver.sh \
 
 #3.Create Repository Server
 gcloud compute instances create repository-server \
@@ -40,7 +40,7 @@ gcloud compute instances create repository-client \
 --metadata-from-file startup-script=NTI-320/clientforrepo.sh \
 
 #5.Create nagios server
-gcloud compute instances create nagiosinstall \
+gcloud compute instances create nagios-install \
 --image-family centos-7 \
 --image-project centos-cloud \
 --zone us-west1-b \
@@ -50,7 +50,7 @@ gcloud compute instances create nagiosinstall \
 --metadata-from-file startup-script=nti-310Class/nagios_install.sh
 
 #6. Create cactiServer
-gcloud compute instances create cactiinstall \
+gcloud compute instances create cacti-install \
 --image-family centos-7 \
 --image-project centos-cloud \
 --zone us-west1-b \
@@ -60,7 +60,7 @@ gcloud compute instances create cactiinstall \
 --metadata-from-file startup-script=nti-310Class/cacti_install.sh
 
 #7.Create postgres and phpPGadmin
-gcloud compute instances create postgresphpadminserver \
+gcloud compute instances create postgres-php-admin-server \
 --image-family centos-7 \
 --image-project centos-cloud \
 --zone us-west1-b \
@@ -70,7 +70,7 @@ gcloud compute instances create postgresphpadminserver \
 --metadata-from-file startup-script=nti-310Class/postgres_phpadmin.sh
 
 #8.Create ldap Server
-gcloud compute instances create ldapserver \
+gcloud compute instances create ldap-server \
 --image-family centos-7 \
 --image-project centos-cloud \
 --zone us-west1-b \
@@ -80,7 +80,7 @@ gcloud compute instances create ldapserver \
 --metadata-from-file startup-script=nti-310Class/ldap.sh
 
 #9.Create nfs
-gcloud compute instances create nfs \
+gcloud compute instances create nfs-server \
 --image-family centos-7 \
 --image-project centos-cloud \
 --zone us-west1-b \
@@ -89,7 +89,7 @@ gcloud compute instances create nfs \
 --metadata-from-file startup-script=nti-310Class/nfs-a.sh
 
 #10.Create django
-gcloud compute instances create django \
+gcloud compute instances create django-server \
 --image-family centos-7 \
 --image-project centos-cloud \
 --zone us-west1-b \
