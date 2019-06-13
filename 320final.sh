@@ -1,7 +1,7 @@
 #!/bin/bash
 https://github.com/thapa001/nti-310Class.git
-#1.RsyslogServer
-gcloud compute instances create rsyslogserver \
+#1. Create RsyslogServer
+gcloud compute instances create rsyslog-server \
 --image-family centos-7 \
 --image-project centos-cloud \
 --zone us-west1-b \
@@ -10,36 +10,36 @@ gcloud compute instances create rsyslogserver \
 --metadata-from-file startup-script=nti-310Class/rsyslog_server.sh
 
 
-#2.Build Server
-gcloud compute instances create build-server1 \
+#2.Create Build Server
+gcloud compute instances create build-server \
 --image-family centos-7 \
 --image-project centos-cloud \
 --zone us-west1-b \
 --tags "http-server","https-server" \
 --machine-type f1-micro \
 --scopes cloud-platform \
---metadata-from-file startup-script=NTI-320/build-server \
+--metadata-from-file startup-script=NTI-320/rpmbuilderver.sh \
 
-#3.Repository Server
-gcloud compute instances create repos-srv \
+#3.Create Repository Server
+gcloud compute instances create repository-server \
 --image-family centos-7 \
 --image-project centos-cloud \
 --zone us-west1-b \
 --tags "http-server","https-server" \
 --machine-type f1-micro \
 --scopes cloud-platform \
---metadata-from-file startup-script=NTI-320/repos_srv.sh \
+--metadata-from-file startup-script=NTI-320/reposerver.sh \
 
-#4.Repository Client Server
-gcloud compute instances create repos-client \
+#4.Create repository Client Server
+gcloud compute instances create repository-client \
 --image-family ubuntu-1804-lts \
 --image-project ubuntu-os-cloud \
 --zone us-west1-b \
 --machine-type f1-micro \
 --scopes cloud-platform \
---metadata-from-file startup-script=NTI-320/repos_client.sh \
+--metadata-from-file startup-script=NTI-320/clientforrepo.sh \
 
-#5.create nagios server
+#5.Create nagios server
 gcloud compute instances create nagiosinstall \
 --image-family centos-7 \
 --image-project centos-cloud \
@@ -49,7 +49,7 @@ gcloud compute instances create nagiosinstall \
 --scopes cloud-platform \
 --metadata-from-file startup-script=nti-310Class/nagios_install.sh
 
-#6.CactiServer
+#6. Create cactiServer
 gcloud compute instances create cactiinstall \
 --image-family centos-7 \
 --image-project centos-cloud \
@@ -59,7 +59,7 @@ gcloud compute instances create cactiinstall \
 --scopes cloud-platform \
 --metadata-from-file startup-script=nti-310Class/cacti_install.sh
 
-#7.postgres and phpPGadmin
+#7.Create postgres and phpPGadmin
 gcloud compute instances create postgresphpadminserver \
 --image-family centos-7 \
 --image-project centos-cloud \
@@ -69,7 +69,7 @@ gcloud compute instances create postgresphpadminserver \
 --scopes cloud-platform \
 --metadata-from-file startup-script=nti-310Class/postgres_phpadmin.sh
 
-#8.ldap
+#8.Create ldap Server
 gcloud compute instances create ldapserver \
 --image-family centos-7 \
 --image-project centos-cloud \
@@ -79,7 +79,7 @@ gcloud compute instances create ldapserver \
 --scopes cloud-platform \
 --metadata-from-file startup-script=nti-310Class/ldap.sh
 
-#9.nfs
+#9.Create nfs
 gcloud compute instances create nfs \
 --image-family centos-7 \
 --image-project centos-cloud \
@@ -88,7 +88,7 @@ gcloud compute instances create nfs \
 --scopes cloud-platform \
 --metadata-from-file startup-script=nti-310Class/nfs-a.sh
 
-#10.django
+#10.Create django
 gcloud compute instances create django \
 --image-family centos-7 \
 --image-project centos-cloud \
@@ -98,7 +98,7 @@ gcloud compute instances create django \
 --scopes cloud-platform \
 --metadata-from-file startup-script=nti-310Class/django_postgres.sh
 
-#11.nfs and ldap client - 1 
+#11.Create nfs and ldap client - 1 
 gcloud compute instances create nfspart1 \
 --image-family ubuntu-1804-lts \
 --image-project ubuntu-os-cloud \
@@ -107,7 +107,7 @@ gcloud compute instances create nfspart1 \
 --scopes cloud-platform \
 --metadata-from-file startup-script=nti-310Class/nfs_and_ldap_client.sh
 
-# nfs and ldap client- 2
+# Create nfs and ldap client- 2
 gcloud compute instances create nfspart2 \
 --image-family ubuntu-1804-lts \
 --image-project ubuntu-os-cloud \
