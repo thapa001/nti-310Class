@@ -17,10 +17,8 @@ cp custom-nrpe-2019/rpm-info/hello_world_from_source/hello.spec .
 mv hello.spec ../SPECS
 cd ..
 #Builds rpm 
-rpmbuild -v -bb --clean SPECS/hello.spec
+rpmbuild -v -bb --clean SPECS/nti-320-plugins.spec
 yum -y install RPMS/x86_64/helloworld-0.1-1.el7.x86_64.rpm 
-
-
 
 
 
