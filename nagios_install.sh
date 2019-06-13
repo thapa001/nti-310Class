@@ -25,5 +25,5 @@ echo "define command{
 /usr/sbin/nagios -v /etc/nagios/nagios.cfg
 #verifying the server to navigate ip instance server 
 systemctl restart nagios
-./generate_config.sh web-a 10.150.0.4
+#./generate_config.sh web-a 10.150.0.4
 systemctl restart nagios
