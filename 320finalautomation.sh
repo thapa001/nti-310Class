@@ -70,7 +70,7 @@ gcloud compute instances create postgres-php-admin-server \
 --metadata-from-file startup-script=nti-310Class/postgres_phpadmin.sh
 
 #8.Create ldap Server
-gcloud compute instances create ldap-server \
+gcloud compute instances create ldap-server007 \
 --image-family centos-7 \
 --image-project centos-cloud \
 --zone us-west1-b \
