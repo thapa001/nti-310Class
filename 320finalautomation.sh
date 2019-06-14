@@ -1,5 +1,5 @@
 #!/bin/bash
-https://github.com/thapa001/nti-310Class.git
+https://github.com/thapa001/nti-320FinalAutomation.git
 #1. Create RsyslogServer
 gcloud compute instances create rsyslog-server \
 --image-family centos-7 \
