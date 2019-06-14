@@ -8,7 +8,7 @@ gcloud compute instances create rsyslog-server \
 --machine-type f1-micro \
 --scopes cloud-platform \
 --metadata-from-file startup-script=nti-320FinalAutomation/rsyslog_server.sh \
---private-network-ip=10.140.0.3
+--private-network-ip=10.138.0.44
 
 
 #2.Create Build Server
@@ -20,7 +20,7 @@ gcloud compute instances create build-server \
 --machine-type f1-micro \
 --scopes cloud-platform \
 --metadata-from-file startup-script=nti-320FinalAutomation/rpmbuildserver.sh \
---private-network-ip=10.140.0.4
+--private-network-ip=10.138.0.45
 
 #3.Create Repository Server
 gcloud compute instances create repository-server \
@@ -31,7 +31,7 @@ gcloud compute instances create repository-server \
 --machine-type f1-micro \
 --scopes cloud-platform \
 --metadata-from-file startup-script=nti-320FinalAutomation/reposerver.sh \
---private-network-ip=10.140.0.5
+--private-network-ip=10.138.0.46
 
 #4.Create repository Client Server
 gcloud compute instances create repository-client \
@@ -41,7 +41,7 @@ gcloud compute instances create repository-client \
 --machine-type f1-micro \
 --scopes cloud-platform \
 --metadata-from-file startup-script=nti-320FinalAutomation/clientforrepo.sh \
---private-network-ip=10.140.0.6
+--private-network-ip=10.138.0.47
 
 #5.Create nagios server
 gcloud compute instances create nagios-install \
@@ -52,7 +52,7 @@ gcloud compute instances create nagios-install \
 --machine-type f1-micro \
 --scopes cloud-platform \
 --metadata-from-file startup-script=nti-320FinalAutomation/nagios_install.sh \
---private-network-ip=10.140.0.7
+--private-network-ip=10.138.0.48
 
 #6. Create cactiServer
 gcloud compute instances create cacti-install \
@@ -63,7 +63,7 @@ gcloud compute instances create cacti-install \
 --machine-type f1-micro \
 --scopes cloud-platform \
 --metadata-from-file startup-script=nti-320FinalAutomation/cacti_install.sh \
---private-network-ip=10.140.0.8
+--private-network-ip=10.138.0.49
 
 #7.Create postgres and phpPGadmin
 gcloud compute instances create postgres-php-admin-server \
@@ -74,7 +74,7 @@ gcloud compute instances create postgres-php-admin-server \
 --machine-type f1-micro \
 --scopes cloud-platform \
 --metadata-from-file startup-script=nti-320FinalAutomation/postgres_phpadmin.sh \
---private-network-ip=10.140.0.9
+--private-network-ip=10.138.0.50
 
 #8.Create ldap Server
 gcloud compute instances create ldap-server007 \
@@ -85,7 +85,7 @@ gcloud compute instances create ldap-server007 \
 --machine-type f1-micro \
 --scopes cloud-platform \
 --metadata-from-file startup-script=nti-320FinalAutomation/ldap.sh \
---private-network-ip=10.140.0.10
+--private-network-ip=10.138.0.51
 
 #9.Create nfs
 gcloud compute instances create nfs-server \
@@ -95,8 +95,7 @@ gcloud compute instances create nfs-server \
 --machine-type f1-micro \
 --scopes cloud-platform \
 --metadata-from-file startup-script=nti-320FinalAutomation/nfs-a.sh \
---private-network-ip=10.140.0.11
-
+--private-network-ip=10.138.0.52
 #10.Create django
 gcloud compute instances create django-server \
 --image-family centos-7 \
@@ -106,7 +105,7 @@ gcloud compute instances create django-server \
 --machine-type f1-micro \
 --scopes cloud-platform \
 --metadata-from-file startup-script=nti-320FinalAutomation/django_postgres.sh \
---private-network-ip=10.140.0.12
+--private-network-ip=10.138.0.53
 
 #11.Create nfs and ldap client - 1 
 gcloud compute instances create nfspart1 \
@@ -116,7 +115,7 @@ gcloud compute instances create nfspart1 \
 --machine-type f1-micro \
 --scopes cloud-platform \
 --metadata-from-file startup-script=nti-320FinalAutomation/nfs_and_ldap_client.sh \
---private-network-ip=10.140.0.13
+--private-network-ip=10.138.0.54
 
 # Create nfs and ldap client- 2
 gcloud compute instances create nfspart2 \
@@ -126,8 +125,7 @@ gcloud compute instances create nfspart2 \
 --machine-type f1-micro \
 --scopes cloud-platform \
 --metadata-from-file startup-script=nti-320FinalAutomation/nfs_and_ldap_client.sh \
---private-network-ip=10.140.0.14
-
+--private-network-ip=10.138.0.55
 
 
 
