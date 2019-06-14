@@ -11,15 +11,12 @@ cd ~/rpmbuild/SOURCES
 # Not needed but to better automate what is needed.
 git clone https://github.com/nic-instruction/custom-nrpe-2019.git
 cd custom-nrpe-2019/
-cp custom-nrpe-2019/rpm-info/hellow_world_from_source/helloworld-0.1.tar.gz .
-cp custom-nrpe-2019/rpm-info/hello_world_from_source/helloworld.spec .
-cp custom-nrpe-2019/rpm-info/hello_world_from_source/hello.spec .
-mv hello.spec ../SPECS
+cp custom-nrpe-2019/nti-320-plugins-0.1.tar.gz .
+cp custom-nrpe-2019/nti-320-plugins/apachectl_config_example.sh .
+cp custom-nrpe-2019/nti-320-plugins.spec .
+mv nti-320-plugins.spec ../SPECS
 cd ..
 #Builds rpm 
 rpmbuild -v -bb --clean SPECS/nti-320-plugins.spec
 yum -y install RPMS/x86_64/helloworld-0.1-1.el7.x86_64.rpm 
-
-
-
 
