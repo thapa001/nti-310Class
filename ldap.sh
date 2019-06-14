@@ -290,6 +290,6 @@ systemctl start rsyslog
 systemctl enable rsyslog
 cp /etc/rsyslog.conf /etc/rsyslog.conf.bak
 
-echo "*.*  @@rsyslogserver2:514" >> /etc/rsyslog.conf
+echo "*.*  @@rsyslog-server2:514" >> /etc/rsyslog.conf
 
 
