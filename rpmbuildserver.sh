@@ -18,5 +18,5 @@ mv nti-320-plugins.spec ../SPECS
 cd ..
 #Builds rpm 
 rpmbuild -v -bb --clean SPECS/nti-320-plugins.spec
-yum -y install RPMS/x86_64/helloworld-0.1-1.el7.x86_64.rpm 
+yum -y install RPMS/x86_64/nti-320-plugins-0.1-1.el7.centos.x86_64.rpm 
 
