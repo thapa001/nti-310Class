@@ -7,7 +7,7 @@ gcloud compute instances create rsyslog-server \
 --zone us-west1-b \
 --machine-type f1-micro \
 --scopes cloud-platform \
---metadata-from-file startup-script=nti-310Class/rsyslog_server.sh \
+--metadata-from-file startup-script=nti-320FinalAutomation/rsyslog_server.sh \
 --private-network-ip=10.128.0.6
 
 
@@ -19,7 +19,7 @@ gcloud compute instances create build-server \
 --tags "http-server","https-server" \
 --machine-type f1-micro \
 --scopes cloud-platform \
---metadata-from-file startup-script=NTI-320/rpmbuildserver.sh \
+--metadata-from-file startup-script=nti-320FinalAutomation/rpmbuildserver.sh \
 --private-network-ip=10.128.0.7
 
 #3.Create Repository Server
@@ -30,7 +30,7 @@ gcloud compute instances create repository-server \
 --tags "http-server","https-server" \
 --machine-type f1-micro \
 --scopes cloud-platform \
---metadata-from-file startup-script=NTI-320/reposerver.sh \
+--metadata-from-file startup-script=nti-320FinalAutomation/reposerver.sh \
 --private-network-ip=10.128.0.8
 
 #4.Create repository Client Server
@@ -40,7 +40,7 @@ gcloud compute instances create repository-client \
 --zone us-west1-b \
 --machine-type f1-micro \
 --scopes cloud-platform \
---metadata-from-file startup-script=NTI-320/clientforrepo.sh \
+--metadata-from-file startup-script=nti-320FinalAutomation/clientforrepo.sh \
 --private-network-ip=10.128.0.9
 
 #5.Create nagios server
@@ -51,7 +51,7 @@ gcloud compute instances create nagios-install \
 --tags "http-server","https-server" \
 --machine-type f1-micro \
 --scopes cloud-platform \
---metadata-from-file startup-script=nti-310Class/nagios_install.sh \
+--metadata-from-file startup-script=nti-320FinalAutomation/nagios_install.sh \
 --private-network-ip=10.128.0.10
 
 #6. Create cactiServer
@@ -62,7 +62,7 @@ gcloud compute instances create cacti-install \
 --tags "http-server","https-server" \
 --machine-type f1-micro \
 --scopes cloud-platform \
---metadata-from-file startup-script=nti-310Class/cacti_install.sh \
+--metadata-from-file startup-script=nti-320FinalAutomation/cacti_install.sh \
 --private-network-ip=10.128.0.11
 
 #7.Create postgres and phpPGadmin
@@ -73,7 +73,7 @@ gcloud compute instances create postgres-php-admin-server \
 --tags "http-server","https-server" \
 --machine-type f1-micro \
 --scopes cloud-platform \
---metadata-from-file startup-script=nti-310Class/postgres_phpadmin.sh \
+--metadata-from-file startup-script=nti-320FinalAutomation/postgres_phpadmin.sh \
 --private-network-ip=10.128.0.12
 
 #8.Create ldap Server
@@ -84,7 +84,7 @@ gcloud compute instances create ldap-server007 \
 --tags "http-server","https-server" \
 --machine-type f1-micro \
 --scopes cloud-platform \
---metadata-from-file startup-script=nti-310Class/ldap.sh \
+--metadata-from-file startup-script=nti-320FinalAutomation/ldap.sh \
 --private-network-ip=10.128.0.13
 
 #9.Create nfs
@@ -94,7 +94,7 @@ gcloud compute instances create nfs-server \
 --zone us-west1-b \
 --machine-type f1-micro \
 --scopes cloud-platform \
---metadata-from-file startup-script=nti-310Class/nfs-a.sh \
+--metadata-from-file startup-script=nti-320FinalAutomation/nfs-a.sh \
 --private-network-ip=10.128.0.14
 
 #10.Create django
@@ -105,7 +105,7 @@ gcloud compute instances create django-server \
 --tags "http-server","https-server" \
 --machine-type f1-micro \
 --scopes cloud-platform \
---metadata-from-file startup-script=nti-310Class/django_postgres.sh \
+--metadata-from-file startup-script=nti-320FinalAutomation/django_postgres.sh \
 --private-network-ip=10.128.0.15
 
 #11.Create nfs and ldap client - 1 
@@ -115,7 +115,7 @@ gcloud compute instances create nfspart1 \
 --zone us-west1-b \
 --machine-type f1-micro \
 --scopes cloud-platform \
---metadata-from-file startup-script=nti-310Class/nfs_and_ldap_client.sh \
+--metadata-from-file startup-script=nti-320FinalAutomation/nfs_and_ldap_client.sh \
 --private-network-ip=10.128.0.16
 
 # Create nfs and ldap client- 2
@@ -125,7 +125,7 @@ gcloud compute instances create nfspart2 \
 --zone us-west1-b \
 --machine-type f1-micro \
 --scopes cloud-platform \
---metadata-from-file startup-script=nti-310Class/nfs_and_ldap_client.sh \
+--metadata-from-file startup-script=nti-320FinalAutomation/nfs_and_ldap_client.sh \
 --private-network-ip=10.128.0.17
 
 
