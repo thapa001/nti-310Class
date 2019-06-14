@@ -18,7 +18,7 @@ mkdir -p /repos/centos/7/extras/x86_64/Packages/
 #gcloud compute scp helloworld-0.1-1.el7.x86_64.rpm mailatpradip8@reposerver:/home/mailatpradip8/
 #Did you mean zone [us-west1-a] for instance: [repo-serv] (Y/n)?  n
 #Replace helloworld with our own package
-cp helloworld-0.1-1.el7.x86_64.rpm /repos/centos/7/extras/x86_64/Packages
+cp nti-320-plugins-0.1-1.el7.x86_64.rpm
 #Update after every change
 createrepo --update /repos/centos/7/extras/x86_64/Packages/
 #Install apache so we can serve our own repo over the web
